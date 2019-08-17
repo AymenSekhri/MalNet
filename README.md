@@ -1,5 +1,5 @@
 # MalNet
-MalNet is Malware Detector using deep machine learning algorithms to classify windows executable to malware or benign. The model constructed using keras with 2 hidden layers of fully connected neurons (250 neuron and 100 neuron respectively) and was trained by [EMBER dataset](https://github.com/endgameinc/ember) EMBER Dataset (600K files) and archived 95% accuaracy from the test set (200K files)
+MalNet is Malware Detector using deep machine learning algorithms to classify windows executable to malware or benign. The model constructed using keras with 2 hidden layers of fully connected neurons (250 neuron and 100 neuron respectively) and was trained by [EMBER dataset](https://github.com/endgameinc/ember) EMBER Dataset (600K files) and achieved 95% accuaracy from the test set (200K files)
 ## Installation
 First install the requirements
 ```
