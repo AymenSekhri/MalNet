@@ -1,0 +1,50 @@
+byteentropy[256]
+strings[8] {numstrings,avlength,printables,entropy,paths,urls,registry,MZ}
+size
+vsize
+has_debug
+has_tls
+has_resources
+has_signature
+has_relocations
+exports
+imports
+symbols
+timestamp
+characteristics
+subsystem
+dll_characteristics
+major_image_version
+minor_image_version
+major_linker_version
+minor_linker_version
+major_operating_system_version
+minor_operating_system_version
+major_subsystem_version
+minor_subsystem_version
+sizeof_code
+sizeof_headers
+sizeof_heap_commit
+.text char[9] {rsize,vsize,entropy,CODE,EXE,RD,WR,UNINI_DATA,INIT_DARA} .text/.code/CODE
+.rdata char[9] {rsize,vsize,entropy,CODE,EXE,RD,WR,UNINI_DATA,INIT_DARA}
+.data char[9] {rsize,vsize,entropy,CODE,EXE,RD,WR,UNINI_DATA,INIT_DARA}
+.rsrc char[9] {rsize,vsize,entropy,CODE,EXE,RD,WR,UNINI_DATA,INIT_DARA}
+.reloc char[9] {rsize,vsize,entropy,CODE,EXE,RD,WR,UNINI_DATA,INIT_DARA}
+other sections[6] {CODE,EXE,RD,WR,UNINI_DATA,INIT_DARA}
+has_odd_section_names
+is_entry_point_in_writable_section
+is_entry_point_in_other_section_than_text
+directories[30] {{vsize,vaddress}*15}
+imports[1000]
+
+
+
+
+
+To do list:
+Ascii/Unicode point to same api
+Nt/Zw point to same api
+more indactors from pe studio
+do checks on reloc and other data sections
+entropy of each section
+SEH check in dll_char
