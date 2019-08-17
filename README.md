@@ -22,7 +22,7 @@ The `APIs_extractor.py` script parses through the dataset and generate the most 
 The `features.py.py` script is class to extract and process the features from the dataset (JSON) or from the raw executable files (EXE/DLL/SYS)
 
 ## Features  
-The feature vector has of 1,347 from different sections of PE  
+The features vector has of 1,347 columns from different sections of PE  
 - 1000 columns for the used APIs from the predefined malicious APIs (listed in MalNet/apis.txt).
 - 256 columns for the entropy of each byte.
 - 21 columns  for `virtual size` ,`raw size`,`virtual address` ,`entropy` and `characteristics` of the sections `.text`, `.data` and `rsrc`.
