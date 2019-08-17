@@ -16,7 +16,7 @@ class ImportsFeatures(object):
                 return x
         return -1 
     def GetAPIList(self):
-        f = open("apis.txt", "r")
+        f = open("MalNet\\apis.txt", "r")
         data = f.readlines()
         return [x.strip() for x in data]
     def VectorizeFromJson(self,y):

@@ -44,9 +44,9 @@ if __name__ == '__main__':
     dataset_path = "D:\\Downloads\\IDM\\Compressed\\dataset\\ember2018\\"
     print("Processing the training set")
     Train_Dataset_Paths = [(dataset_path + "train_features_{}.jsonl").format(i) for i in range(6)]
-    VectorizeJson(Train_Dataset_Paths, "{}_train.data")
+    VectorizeJson(Train_Dataset_Paths, "MalNet\\Vectors\\{}_train.data")
     
     print("Processing the test set")
     Test_Dataset_Paths = [dataset_path + "test_features.jsonl"]
-    VectorizeJson(Test_Dataset_Paths,"{}_test.data")
+    VectorizeJson(Test_Dataset_Paths,"MalNet\\Vectors\\{}_test.data")
     print("Dataset processing has been completed.")

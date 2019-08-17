@@ -5,7 +5,7 @@
     <ProjectGuid>12e6a8c5-8824-4ec9-904b-574c11a9e3b5</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>MalNet\train.py</StartupFile>
+    <StartupFile>MalNet_Predictor.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

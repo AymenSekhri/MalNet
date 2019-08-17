@@ -24,8 +24,9 @@ def IsValidPE(path):
 
 def Predict(path):
     #Loading Model
-    minmax_scale = joblib.load('model\\scaler.pkl')
-    model = tf.compat.v1.keras.models.load_model("model\\weights_and_architecture.h5")
+    ModelPath = "trained model\\" # change this to "MalNet\\" to use your trained model
+    minmax_scale = joblib.load(ModelPath + 'scaler.pkl')
+    model = tf.compat.v1.keras.models.load_model(ModelPath + "weights_and_architecture.h5")
     model.compile(tf.train.AdamOptimizer() ,loss=keras.losses.mean_squared_error ,metrics=['accuracy'])
     if IsValidPE(path) == False:
         return -1,-1

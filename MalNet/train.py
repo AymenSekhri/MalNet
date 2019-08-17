@@ -14,17 +14,17 @@ import joblib
 
 
 
-dataset_path = "D:\\Downloads\\IDM\\Compressed\\dataset\\ember2018\\Vectors\\"
+vectors_path = "MalNet\\Vectors\\"
 def unison_shuffled(a, b):
     assert len(a) == len(b)
     p = np.random.permutation(len(a))
     return a[p], b[p]
 
 #Opening np vectors from disk
-x_train = np.lib.format.open_memmap(dataset_path + "x_train.data", dtype=np.float32, mode="r")
-y_train = np.lib.format.open_memmap(dataset_path + "y_train.data", dtype=np.float32, mode="r")
-x_test = np.lib.format.open_memmap(dataset_path + "x_test.data", dtype=np.float32, mode="r")
-y_test = np.lib.format.open_memmap(dataset_path + "y_test.data", dtype=np.float32, mode="r")
+x_train = np.lib.format.open_memmap(vectors_path + "x_train.data", dtype=np.float32, mode="r")
+y_train = np.lib.format.open_memmap(vectors_path + "y_train.data", dtype=np.float32, mode="r")
+x_test = np.lib.format.open_memmap(vectors_path + "x_test.data", dtype=np.float32, mode="r")
+y_test = np.lib.format.open_memmap(vectors_path + "y_test.data", dtype=np.float32, mode="r")
 
 #Normlazing
 minmax_scale = preprocessing.MinMaxScaler().fit(x_train)
@@ -50,6 +50,6 @@ scores = model.evaluate(x_test, y_test)
 print("Test Loss : {}    Test Accuarcy : {}%".format(scores[0],scores[1] * 100))
 
 #Saving Model
-joblib.dump(minmax_scale, 'scaler.pkl')     #Saving normalization scale object
-model.save("weights_and_architecture.h5")   #Saving Keras model
+joblib.dump(minmax_scale, 'MalNet\\scaler.pkl')     #Saving normalization scale object
+model.save("MalNet\\weights_and_architecture.h5")   #Saving Keras model
 print("Model Has Been Saved")
