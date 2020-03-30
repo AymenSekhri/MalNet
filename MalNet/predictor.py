@@ -10,9 +10,9 @@ from tensorflow import keras
 import numpy as np
 import joblib
 import lief
-from MalNet.features import Features
+from MalNet.features_processing import features_processing
 
-MyFeatures = Features()
+MyFeatures = features_processing()
 
 def IsValidPE(path):
     PE = lief.parse(path)
@@ -22,12 +22,8 @@ def IsValidPE(path):
     del PE
     return True
 
-def Predict(path):
-    #Loading Model
-    ModelPath = "trained model\\" # change this to "MalNet\\" to use your trained model
-    minmax_scale = joblib.load(ModelPath + 'scaler.pkl')
-    model = tf.compat.v1.keras.models.load_model(ModelPath + "weights_and_architecture.h5")
-    model.compile(tf.train.AdamOptimizer() ,loss=keras.losses.mean_squared_error ,metrics=['accuracy'])
+def Predict(model,path):
+    
     if IsValidPE(path) == False:
         return -1,-1
     X_vector = MyFeatures.VectorizeFromRawFile(path)
@@ -39,12 +35,17 @@ def Predict(path):
     else:
         return 0,100 * (thres - score[0][0]) / thres
     del X_vector
-#Evaluate the model
+
 if __name__ == "__main__":
+    #Loading Model
+    ModelPath = "MalNet\\TrainedModel\\" # change this to "MalNet\\" to use your trained model
+    minmax_scale = joblib.load(ModelPath + 'scaler.pkl')
+    model = tf.compat.v1.keras.models.load_model(ModelPath + "weights_and_architecture.h5")
+    model.compile(tf.compat.v1.train.AdamOptimizer() ,loss=keras.losses.mean_squared_error ,metrics=['accuracy'])
     while True:
         print("\033[1;37;40mEnter File Path : ")
         d = input("").replace("\"","",-1)
-        result,score = Predict(d)
+        result,score = Predict(model,d)
         if result == -1 :
             print("\033[1;37;40mInvalid File Format.")
         elif result == 1:

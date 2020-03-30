@@ -237,7 +237,7 @@ class EntropyFeatures(object):
                 Hbin, c = self._entropy_bin_counts(block)
                 output[Hbin, :] += c
         return output.flatten().tolist()
-class Features(object):
+class features_processing(object):
     dim = 0
     def VectorizeFromJson(self,features_json):
         y = json.loads(features_json)

@@ -13,9 +13,10 @@ def FindApi(ApiName,ApiList):
             return x
     return -1 
 
-dataset_path = "D:\\Downloads\\IDM\\Compressed\\dataset\\ember2018\\"
-
-xmldoc = minidom.parse("C:\\Users\\0xCC\\Documents\\Tools\\pestudio\\xml\\functions.xml")
+dataset_path = "ember2018\\"
+#get list of APIs that is suspicious and might be used by malwares from functions.xml.
+#The file is from pestudio, check the file header for more info.
+xmldoc = minidom.parse("MalNet\\functions.xml")
 itemlist = xmldoc.getElementsByTagName('fct')
 ApiList = []
 

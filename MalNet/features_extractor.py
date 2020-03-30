@@ -4,7 +4,7 @@ import numpy as np
 import json
 import tqdm
 import multiprocessing
-from features import Features
+from MalNet.features_processing import features_processing
 
 def Vectorize_features(Output,ft,nrow,features_json):
     #Create np vector on disk
@@ -24,7 +24,7 @@ def GetDatasetLines(Paths,count):
                     yield  x
 NumberOfLabledData = 0
 def VectorizeJson(InPaths,OutPath):
-    ft = Features()
+    ft = features_processing()
     NumberOfSamplesToRead = -1
     #Read Dataset
     pool = multiprocessing.Pool()

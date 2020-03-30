@@ -42,7 +42,7 @@ model.add(keras.layers.Dropout(0.5))
 model.add(keras.layers.Dense(100,activation='relu'))
 model.add(keras.layers.Dropout(0.5))
 model.add(keras.layers.Dense(1,activation='sigmoid'))
-model.compile(tf.train.AdamOptimizer() ,loss=keras.losses.mean_squared_error ,metrics=['accuracy'])
+model.compile(tf.compat.v1.train.AdamOptimizer() ,loss=keras.losses.mean_squared_error ,metrics=['accuracy'])
 model.fit(x=x_train,y=y_train,batch_size=200,epochs=10,validation_split=0.0)
 
 #Evaluate the model using test set
@@ -50,6 +50,6 @@ scores = model.evaluate(x_test, y_test)
 print("Test Loss : {}    Test Accuarcy : {}%".format(scores[0],scores[1] * 100))
 
 #Saving Model
-joblib.dump(minmax_scale, 'MalNet\\scaler.pkl')     #Saving normalization scale object
-model.save("MalNet\\weights_and_architecture.h5")   #Saving Keras model
+joblib.dump(minmax_scale, 'MalNet\\TrainedModel\\scaler.pkl')     #Saving normalization scale object
+model.save("MalNet\\TrainedModel\\weights_and_architecture.h5")   #Saving Keras model
 print("Model Has Been Saved")

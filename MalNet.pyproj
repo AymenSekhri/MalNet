@@ -5,7 +5,7 @@
     <ProjectGuid>12e6a8c5-8824-4ec9-904b-574c11a9e3b5</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>MalNet_Predictor.py</StartupFile>
+    <StartupFile>MalNet\features_extractor.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -27,16 +27,14 @@
     <Compile Include="MalNet\APIs_extractor.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MalNet\features.py">
+    <Compile Include="MalNet\features_processing.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="MalNet\features_extractor.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MalNet\predictor.py" />
     <Compile Include="MalNet\__init__.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MalNet_Predictor.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="MalNet\train.py">

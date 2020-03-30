@@ -7,15 +7,17 @@ pip install -r requirements.txt
 ```
 Process the EMBER dataset and generate vectorized training input
 ```
-Python MalNet/features_extractor.py
+Python MalNet\features_extractor.py
 ```
-Train the model and save the parameters of the model.
+The vectorized version of the features will be generated in `MalNel\Vectors`.<br>
+To train the model and save the parameters of the model.
 ```
-Python MalNet/train.py
+Python MalNet\train.py
 ```
-Use the model to classify PE files
+The model will saved in `MalNet\TrainedModel`.<br>
+To use the model to classify PE files.
 ```
-Python MalNet_Predictor.py
+Python predictor.py
 ```
 ## Scripts
 The `APIs_extractor.py` script parses through the dataset and generate the most 1k imported malicious Windows APIs by the malwares to use in the features. The generated APIs are in MalNet/apis.txt.  
