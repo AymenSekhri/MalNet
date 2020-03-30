@@ -22,8 +22,11 @@ Python MalNet\train.py
 The model will saved in `MalNet\TrainedModel`.<br>
 
 ## Scripts
-The `APIs_extractor.py` script parses through the dataset and generate the most 1k imported malicious Windows APIs by the malwares to use in the features. The generated APIs are in MalNet/apis.txt.  
-The `features.py.py` script is class to extract and process the features from the dataset (JSON) or from the raw executable files (EXE/DLL/SYS)
+The `apis_extractor.py` script parses through the dataset and generate the most 1k imported malicious Windows APIs by the malwares to use in the features. The generated APIs are in MalNet/apis.txt.  
+The `features_processing.py` script is class to extract and process the features from the dataset (JSON) or from the raw executable files (EXE/DLL/SYS)
+The `train.py` script is used to train the model.
+The `predict.py` script is used to classify PE files.
+The `features_extractor.py` script used to generate a vectorized version of the JSON data set.
 
 ## Features  
 The features vector has of 1,347 columns from different sections of PE  
