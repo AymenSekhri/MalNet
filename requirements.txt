@@ -1,4 +1,4 @@
-joblib==0.13.2
+joblib==1.2.0
 lief==0.10.0.dev0
 pyperclip==1.7.0
 tqdm==4.32.2
